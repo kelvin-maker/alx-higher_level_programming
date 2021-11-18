@@ -1,0 +1,7 @@
+#!/bin/bash
+python3 - "${PYFILE}" << EOF
+from sys import argv, stdout
+from py_compile import compile
+stdout.write(" ".join(("Compiling", argv[1], "...\n")))
+compile(argv[1], cfile=argv[1] + "c")
+EOF
