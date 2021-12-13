@@ -1,4 +1,4 @@
-#!/usr/bin/pyhon3
+#!/usr/bin/python3
 """ An empty Class Defigning a Rectangle """
 
 
