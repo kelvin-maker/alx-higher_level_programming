@@ -1,13 +1,9 @@
 #!/usr/bin/pyhon3
+""" An empty Class Defigning a Rectangle """
 
-'''
-An empty Class Defigning a Rectangle
 
-'''
 
 class Rectangle():
 
-    '''    
-    empty class
-
-    '''
+    """ empty class """
+    
