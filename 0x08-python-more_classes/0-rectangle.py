@@ -7,11 +7,7 @@ An empty Class Defigning a Rectangle
 
 class Rectangle():
 
-    '''
-    Instantiate a Rectangle 
+    '''    
+    empty class
 
     '''
-    def _init_(self, size=0):
-
-        self.size = size
-               
