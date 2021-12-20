@@ -1,0 +1,48 @@
+>>> MyList = __import__("1-my_list").MyList
+>>> ls = MyList()
+>>> ls.print_sorted()
+[]
+>>> ls.append(0)
+>>> ls.print_sorted()
+[0]
+>>> ls.append(1)
+>>> ls.print_sorted()
+[0, 1]
+>>> ls.append(-1)
+>>> print(ls)
+[0, 1, -1]
+>>> ls.print_sorted()
+[-1, 0, 1]
+>>> print(ls)
+[0, 1, -1]
+>>> ls.clear()
+>>> ls.append('z')
+>>> ls.print_sorted()
+['z']
+>>> ls.append('a')
+>>> ls.print_sorted()
+['a', 'z']
+>>> ls.append(0)
+>>> ls.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: unorderable types: int() < str()
+>>> ls.reverse()
+>>> ls.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: unorderable types: str() < int()
+>>> ls.clear()
+>>> ls.append(float("inf"))
+>>> ls.append(0)
+>>> ls.append(float("-inf"))
+>>> ls.print_sorted()
+[-inf, 0, inf]
+>>> ls.clear()
+>>> ls.append(0)
+>>> ls.append(float("nan"))
+>>> ls.print_sorted()
+[0, nan]
+>>> ls.reverse()
+>>> ls.print_sorted()
+[nan, 0]
