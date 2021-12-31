@@ -8,7 +8,7 @@ class Rectangle(Base):
     """Representation of a rectangle
     """
     HEADERS = ('id', 'width', 'height', 'x', 'y')
-
+    i = 0
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Instantiate a rectangle
@@ -108,3 +108,8 @@ class Rectangle(Base):
         """gives the area of a rectangle"""
         return self.x * self.y or self.height * self.width
         
+    def display(self):
+        """ prints a rectangle with '#' caracter """
+        for self.i in range(self.height):
+            print(self.width * "#")
+            
