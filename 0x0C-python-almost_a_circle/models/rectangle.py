@@ -45,6 +45,20 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = width
 
+ 
+    @property
+    def width(self):
+        """get private instance attribute width"""
+        return self.__width
+    @width.setter
+    def width(self, width):
+        """set private instance width"""
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width < 1:
+            raise ValueError("width must be > 0")
+        self.__width = width
+
     @property
     def height(self):
         """get private instance attribute height"""
@@ -89,3 +103,8 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
+    def area(self):
+        """gives the area of a rectangle"""
+        return self.x * self.y or self.height * self.width
+        
