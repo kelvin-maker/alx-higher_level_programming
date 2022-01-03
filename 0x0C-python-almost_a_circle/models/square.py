@@ -18,7 +18,7 @@ class Square(Rectangle):
         return "[{type}] ({id}) {x}/{y} - {size}".format(
             type=self.__class__.__name__,
             id=self.id,
-            size=self.width or self.height,
+            size=self.size,
             x=self.x,
             y=self.y
         )
