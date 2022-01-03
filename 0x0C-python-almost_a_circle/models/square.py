@@ -22,3 +22,17 @@ class Square(Rectangle):
             x=self.x,
             y=self.y
         )
+
+
+    @property
+    def size(self):
+        """Get private instance attribute 'width'
+        """
+        return self.width
+
+    @size.setter
+    def size(self, size):
+        """Set private instance attributes 'width' and 'height'
+        """
+        self.width = size
+        self.height = size
