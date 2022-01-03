@@ -9,7 +9,7 @@ class Rectangle(Base):
     """
     HEADERS = ('id', 'width', 'height', 'x', 'y')
     i = 0
-
+    z = 1
     def __init__(self, width, height, x=0, y=0, id=None):
         """Instantiate a rectangle
         """
@@ -110,6 +110,18 @@ class Rectangle(Base):
         
     def display(self):
         """ prints a rectangle with '#' caracter """
-        for self.i in range(self.height):
-            print(self.width * "#")
+        for self.i in range(self.height or self.y):
+            print(self.width * "#" or self.y * "#")
             
+    def update(self, *args, **kwargs):
+        """ Assigns arguements to each attribute"""
+        if args:
+            for size in zip(self.HEADERS, args):
+                setattr(self, *size)
+        else:
+            for key in kwargs:
+                if key in self.HEADERS:
+                    setattr(self, key, kwargs[key])
+                
+        
+        
