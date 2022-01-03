@@ -122,6 +122,8 @@ class Rectangle(Base):
             for key in kwargs:
                 if key in self.HEADERS:
                     setattr(self, key, kwargs[key])
-                
-        
-        
+    def to_dictionary(self):
+        """Get a dictionary representation of a rectangle
+        """
+        return {key: getattr(self, key) for key in self.__class__.HEADERS}
+                    
