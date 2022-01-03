@@ -52,4 +52,4 @@ class Square(Rectangle):
         """Get a dictionary representation of a square
         """
         return {key: getattr(self, key) for key in self.__class__.HEADERS}
-                        
+    

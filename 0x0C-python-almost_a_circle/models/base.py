@@ -63,3 +63,15 @@ class Base():
                 break
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Load the objects defined in the JSON file <class-name>.json
+        """
+        try:
+            with open("{}.json".format(cls.__name__), 'r') as ifile:
+                return [cls.create(**obj)
+                        for obj in cls.from_json_string(ifile.read())]
+        except FileNotFoundError:
+            return []
+        
