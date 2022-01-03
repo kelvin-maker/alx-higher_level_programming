@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Provides a base class for all other classes in this module
 """
+import json
 
 class Base():
     """Base class for all other classes in this module
@@ -18,3 +19,23 @@ class Base():
         else:
             self.id = id
             
+        
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Return a JSON representation a list of dictionaries
+        """
+        if list_dictionaries is None:
+            return '[]'
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Save a JSON representation of list_objs to <class-name>.json
+        """
+        with open("{}.json".format(cls.__name__), 'w') as ofile:
+            if list_objs:
+                ofile.write(cls.to_json_string(
+                    [obj.to_dictionary() for obj in list_objs]
+                ))
+            else:
+                ofile.write("[]")
