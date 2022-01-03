@@ -39,3 +39,12 @@ class Base():
                 ))
             else:
                 ofile.write("[]")
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Return the list defined by a JSON string
+        """
+        if json_string is None:
+            return []
+        return json.loads(json_string)
+    
