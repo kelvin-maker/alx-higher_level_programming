@@ -48,3 +48,18 @@ class Base():
             return []
         return json.loads(json_string)
     
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Return a new instance of cls with its attributes set
+        """
+        args = []
+        while True:
+            try:
+                obj = cls(*args)
+            except TypeError:
+                args.append(1)
+            else:
+                break
+        obj.update(**dictionary)
+        return obj
