@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+""" Provides a class 'Rectangle' to represent a rectangle
+"""
+
+
+class Rectangle():
+    """ Definition of a class to represent a chessboard
+    """
+    def __init__(self, width=0, height=0):
+        """ Instantiate a chessboard
+        """
+        self.height = height
+        self.width = width
+
+    def __str__(self):
+        """ Represent a chessboard as a string
+        """
+        if self.height and self.width:
+            return '\n'.join(['#' * self.width] * self.height)
+        return ''
+
+    def width(self):
+        """ Get the width of a rectangle
+        """
+        return self.__width
+
+    def width(self, value):
+        """ Set the width of a rectangle
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+    def height(self):
+        """ Get the height of a rectangle
+        """
+        return self.__height
+    def height(self, value):
+        """ Set the height of a rectangle
+        """
+        
