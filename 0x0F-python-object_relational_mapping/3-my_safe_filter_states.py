@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+List all states matching given name from a MySQL db on localhost at port 3306
+"""
 
 import sys
 import MySQLdb
