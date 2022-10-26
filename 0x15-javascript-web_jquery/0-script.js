@@ -1,4 +1,4 @@
 #!/usr/bin/node
 
-const div = document.querySelector("script");
-div.style.color = "#FF0000";
+const header = document.querySelector('HEADER');
+Object.assign(header, { style: 'color: #FF0000' });
